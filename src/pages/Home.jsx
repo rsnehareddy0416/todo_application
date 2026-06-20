@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import "../style/home.css"
 import {Link} from 'react-router-dom'
-import { useParams } from 'react-router-dom'
 import { AddToCart } from '../redux/CartSlice'
 import { useDispatch } from 'react-redux'
 
@@ -10,9 +9,8 @@ const Home = () => {
 
 let [data, setData] = useState([])
 
-let { id } = useParams()
 
-let API_URL = "http://localhost:5001/data"
+let API_URL = "http://localhost:3000/data"
 
 let dispatch = useDispatch()
 
@@ -59,7 +57,7 @@ useEffect(() => {
 
                       <div className="home-card-btn">
 
-                      <button onClick={() => AddtoCart(data)}>
+                      <button onClick={() => AddtoCart(item)}>
                         Add to Cart
                       </button>
 
